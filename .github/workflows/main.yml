@@ -4,6 +4,7 @@ name: ShiftLeft
 
 on:
   pull_request:
+  merge:
   workflow_dispatch:
   push:
   # We recommend triggering a scan when merging to your default branch as a best practice,
