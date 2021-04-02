@@ -13,7 +13,6 @@ additional-findings:
   insights:
     entropy: 0.9
     name: secrets
-    obfuscate: true
 finding-modifications:
   my_modification_rule:
     filter:
