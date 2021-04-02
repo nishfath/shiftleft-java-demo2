@@ -3,15 +3,10 @@ inspect:
       language: JAVA
       name: helloshiftleft
       policy: io.shiftleft/helloshiftleft
-  - app:
       additional-findings:
         - insights
-      language: GO
       modify-findings:
         - my_modification_rule
-      name: tarpit_go
-  - default:
-      policy: io.shiftleft/default
 finding-modifications:
   my_modification_rule:
     filter:
