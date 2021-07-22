@@ -1,4 +1,8 @@
 ngsast:
+  - app:
+      name: shiftleft-java-demo
+      policy: io.shiftleft/shiftleft-java-demo
+      language: JAVA
   - default:
       policy: io.shiftleft/defaultWithDict
       modify-findings:
