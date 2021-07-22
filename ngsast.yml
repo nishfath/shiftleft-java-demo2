@@ -1,9 +1,18 @@
 ngsast:
-  - app:
-      name: shiftleft-java-demo
-      policy: io.shiftleft/shiftleft-java-demo
-      language: JAVA
-  - default:
-      policy: io.shiftleft/defaultWithDict
-      modify-findings:
-        - downgrade_sqli
+- default:
+    modify-findings:
+      - downgrade_sqli
+finding-modifications:
+  downgrade_sqli:
+    # Use filter to specify the category
+    filter:
+    # Specify the value for the tags, such as cvss_score or severity, that you would like to use
+    # Optionally, you can add a custom tag (e.g, a tag indicating the reason a vuln is
+    # marked as such)
+    tags:
+      - key: cvss_score
+        value: 5
+      - key: severity
+        value: info
+      - key: reason
+        value: appsec_approved
