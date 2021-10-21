@@ -1,0 +1,6 @@
+# Example analysis remediation config
+methods:
+ - method: io.shiftleft.controller.AdminController.doPostLogin:java.lang.String(java.lang.String,java.lang.String,javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpServletRequest)
+   tags:
+     - key: category
+       value: Sensitive Data Leak
