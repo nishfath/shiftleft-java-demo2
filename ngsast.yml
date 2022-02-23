@@ -15,6 +15,6 @@ finding-modifications:
       - key: cvss_score
         value: 5
       - key: severity
-        value: info
+        value: critical
       - key: reason
         value: appsec_approved
