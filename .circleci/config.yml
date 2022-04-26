@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run: mvn package #if necessary, build app
       - shiftleft/analyze:
-          app: Shiftleft-Java-Demo-CircleCI
+          app: shiftleft-java-demo2
           target: target/hello-shiftleft-0.0.1.jar
           language: java
 workflows:
