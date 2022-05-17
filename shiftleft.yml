@@ -1,50 +1,26 @@
 source:
-  branch: main
+  branch: master
+  scan: previous
 build_rules:
-  - id: no-net-new-high-impact
-    finding_types:
-      - vuln
-      - secret     
-    severity:
-      - SEVERITY_HIGH_IMPACT
-  - id: break-the-build
+  - id: build-rule-identifier
     finding_types:
       - vuln
       - secret
-      - insight
     severity:
-      - SEVERITY_HIGH_IMPACT   # or "critical" 
-      - SEVERITY_MEDIUM_IMPACT # or "moderate"
-      - SEVERITY_LOW_IMPACT    # or "info"
+      - moderate
+      - critical
     type:
-      - Cookie Injection
-      - Deserialization
-      - Directory traversal
-      - File Write
-      - Insecure Cookie
-      - LDAP Injection
-      - Mail Injection
-      - Mass Assignment
-      - NoSQL Injection
-      - Open Redirect
-      - Remote Code Execution
-      - Sensitive Data Leak
-      - Session Injection
       - SQL Injection
-      - TLS checks are disabled
-      - Usage of insecure API
-      - Weak Hash
-      - XML InjectionXPath Injection
-      - XPath Injection
-      - XSS
-      - XXE
+      - Sensitive Data Leak
     owasp_category:
       - a1-injection
-      - a2-broken-authentication
-      - a3-sensitive-data-exposure
-      - a4-xxe
-      - a5-broken-access-control
-      - a6-security-misconfiguration
-      - a7-cross-site-scripting
-      - a7-xss
-      - a8-deserialization
+    threshold: 10
+  - id: another-build-rule
+    severity:
+      - info
+    threshold: 100
+  - id: reachable-oss-vuln
+    finding_types: [oss_vuln]
+    options:
+      reachable: true
+      num_findings: 2
